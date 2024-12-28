@@ -23,7 +23,7 @@ baidu_site_verification  :  # get baidu_site_verification from https://ziyuan.ba
 author:
   name             : "Lianqing Zheng"
   avatar           : "images/zlq.png"
-  bio              : "work hard, play hard"
+  bio              : "Work hard, play hard"
   location         : "Shanghai, China"
   employer         :
   pubmed           : 
@@ -37,7 +37,7 @@ author:
   flickr           :
   facebook         :
   foursquare       :
-  github           : "https://github.com/TJRadarLab?tab=repositories"
+  github           : "TJRadarLab"
   google_plus      :
   keybase          :
   instagram        :
@@ -45,7 +45,7 @@ author:
   lastfm           :
   linkedin         : # e.g., "linkedin username"
   dblp             : # e.g., "https://dblp.org/pid/xx/xxxx.html"
-  orcid            : "https://orcid.org/my-orcid?orcid=0000-0002-7186-4055"
+  orcid            : # "https://orcid.org/my-orcid?orcid=0000-0002-7186-4055"
   pinterest        :
   soundcloud       :
   stackoverflow    : # http://stackoverflow.com/users/123456/username
