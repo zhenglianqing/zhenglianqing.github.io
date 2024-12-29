@@ -54,8 +54,14 @@ Studies, Harbin Institute of Technology, Weihai.
 - [Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet](https://github.com), A, B, C, **CVPR 2020** -->
 
 # 🎖 Honors and Awards
-- *2021.10* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
-- *2021.09* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
+- 2023-2024 Weichai Doctoral Scholarship (top 5%, ￥20,000) [[IMG]](../honors_img/WEICHAI.jpg)
+- 2021-2022 Outstanding Doctoral Freshman Scholarship (top 20%, ￥5,000) [[IMG]](../honors_img/Outstanding_Doctoral_Freshman_Scholarship.jpg)
+- 2020-2021 Hydra-vision Scholarship (top 10%, ￥10,000) [[IMG]](../honors_img/XIONGTAO.jpg)
+- 2020 Second Prize in the 17th "Huawei Cup" Chinese Postgraduate Mathematical Contest in Modeling [[IMG]](../honors_img/MCM.jpg)
+- 2019 Outstanding Graduate of Shandong Province (top 5%) [[IMG]](../honors_img/Outstanding_Graduate_of_Shandong_Province.jpg)
+- 2017-2018 China National Scholarship (top 1%, ￥8,000) [[IMG]](../honors_img/National_Scholarship.jpg)
+- 2016-2017 First-Class Academic Scholarship (top 5%, ￥1,500) [[IMG]](../honors_img/renmin.jpg)
+
 
 
 
