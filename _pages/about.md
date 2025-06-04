@@ -77,8 +77,11 @@ Dataset for Autonomous Driving," arXiv preprint arXiv:2412.10734 (2024). (submit
 - 2017-2018 China National Scholarship (top 1%, ￥8,000) [[IMG]](../honors_img/National_Scholarship.jpg)
 - 2016-2017 First-Class Academic Scholarship (top 5%, ￥1,500) [[IMG]](../honors_img/renmin.jpg)
 
-
-
+# 🌟Activities
+- 2025.03 Presenting the construction of the OmniHD-Scenes dataset at "Autonomous Driving Heart". [[Link]](https://mp.weixin.qq.com/s/kBSH3eYEI4D_93PYaxjjtA)
+- 2025.01 Online technical sharing and exchange session with the TUM/MAN truck team. [[IMG1]](../images/felix.png) [[IMG2]](../images/fabian.png) [[IMG3]](../images/me.png)
+- 2024.09 Attending the AEIF 2024 conference. [[IMG]](../images/AEIF.jpg)
+- 2022.10 Delivered a presentation at ITSC 2022. [[IMG]](../images/ITSC.jpg)
 
 # ✅ Services
 *Reviewer of IEEE ICRA, IEEE ITSC*
