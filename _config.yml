@@ -22,11 +22,7 @@ baidu_site_verification  :  # get baidu_site_verification from https://ziyuan.ba
 # Site Author
 author:
   name             : "Lianqing Zheng"
-<<<<<<< HEAD
   avatar           : "images/zlq2.png"
-=======
-  avatar           : "images/zlq2.jpg"
->>>>>>> a733df35db3db6bc306c817785744638a69e5e8a
   bio              : "Work hard, play hard"
   location         : "Shanghai, China"
   employer         :
