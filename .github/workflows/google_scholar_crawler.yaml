@@ -1,30 +1,65 @@
 name: Get Citation Data
 
-on: 
- workflow_dispatch: 
- schedule:
-  - cron:  '0 8 * * *'
+on:
+  page_build:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 8 * * *'
+
 permissions:
   contents: write
+
+concurrency:
+  group: google-scholar-stats
+  cancel-in-progress: true
+
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
+    timeout-minutes: 6
     steps:
-    - uses: actions/checkout@v4
-    - name: Install Reqs
-      run: |
-        sudo apt-get install python3-setuptools
-    - name: Run
-      run: |
-        cd ./google_scholar_crawler
-        pip3 install -r requirements.txt
-        python3 main.py
-        cd ./results
-        git init
-        git config --local user.name "${GITHUB_ACTOR}"
-        export remote_repo="https://${GITHUB_ACTOR}:${{ secrets.GITHUB_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git"
-        git add *.json
-        git commit -m "Updated Citation Data"
-        git push "${remote_repo}" HEAD:google-scholar-stats --force
-      env: 
-        GOOGLE_SCHOLAR_ID: ${{ secrets.GOOGLE_SCHOLAR_ID }}
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+          cache-dependency-path: google_scholar_crawler/requirements.txt
+      - name: Install dependencies
+        run: python -m pip install -r google_scholar_crawler/requirements.txt
+      - name: Fetch citation data
+        id: crawl
+        working-directory: google_scholar_crawler
+        env:
+          GOOGLE_SCHOLAR_ID: ${{ secrets.GOOGLE_SCHOLAR_ID }}
+        run: |
+          set +e
+          timeout 300s python -u main.py
+          status=$?
+          set -e
+          if [ "$status" -eq 124 ]; then
+            # Only tolerate a network timeout when valid previous data exists.
+            git fetch origin google-scholar-stats
+            git show FETCH_HEAD:gs_data.json > "$RUNNER_TEMP/previous-scholar-data.json"
+            python -c 'import json, os; d=json.load(open(os.path.join(os.environ["RUNNER_TEMP"], "previous-scholar-data.json"))); assert isinstance(d["citedby"], int) and isinstance(d["publications"], dict); print("Retained citation data last updated:", d["updated"])' >> "$GITHUB_STEP_SUMMARY"
+            echo "::warning::Google Scholar did not finish within 300 seconds. Previous citation data has been retained; citations were NOT refreshed."
+            echo "Google Scholar timed out. No new citation data was published." >> "$GITHUB_STEP_SUMMARY"
+            echo "updated=false" >> "$GITHUB_OUTPUT"
+          elif [ "$status" -ne 0 ]; then
+            exit "$status"
+          else
+            echo "updated=true" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Publish citation data
+        if: steps.crawl.outputs.updated == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git fetch origin google-scholar-stats
+          git worktree add "$RUNNER_TEMP/scholar-stats" FETCH_HEAD
+          cp google_scholar_crawler/results/*.json "$RUNNER_TEMP/scholar-stats/"
+          git -C "$RUNNER_TEMP/scholar-stats" add gs_data.json gs_data_shieldsio.json
+          if ! git -C "$RUNNER_TEMP/scholar-stats" diff --cached --quiet; then
+            git -C "$RUNNER_TEMP/scholar-stats" commit -m "Updated Citation Data"
+            git -C "$RUNNER_TEMP/scholar-stats" push origin HEAD:google-scholar-stats
+          fi
+          echo "Citation data successfully refreshed and published." >> "$GITHUB_STEP_SUMMARY"
