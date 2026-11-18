@@ -61,7 +61,7 @@ Studies, Harbin Institute of Technology, Weihai.
     </div>
   </div>
   <div class='paper-box-text' markdown="1">
-"OmniHD-Scenes: A Next-Generation Multimodal Dataset for Autonomous Driving," *IEEE Transactions on Pattern Analysis and Machine Intelligence*, 2026.  [[Paper]](https://arxiv.org/abs/2412.10734) [[Project]](https://www.2077ai.com/OmniHD-Scenes/) [![](https://img.shields.io/github/stars/TJRadarLab/OmniHD-Scenes?style=social&label=Code+Stars)](https://github.com/TJRadarLab/OmniHD-Scenes) <a href='https://scholar.google.cz/citations?user=gZfyMFwAAAAJ'><img src="https://img.shields.io/badge/dynamic/json?url=https://raw.githubusercontent.com/zhenglianqing/zhenglianqing.github.io/google-scholar-stats/gs_data.json&query=$.publications.gZfyMFwAAAAJ:_FxGoFyzp5QC.num_citations&logo=Google%20Scholar&label=citations&color=9cf&labelColor=f6f6f6&style=flat"></a>
+"OmniHD-Scenes: A Next-Generation Multimodal Dataset for Autonomous Driving," *IEEE Transactions on Pattern Analysis and Machine Intelligence*, 2026.  [[Paper]](https://arxiv.org/abs/2412.10734) [[Project]](https://www.2077ai.com/datasets/omnihdscenes) [![](https://img.shields.io/github/stars/TJRadarLab/OmniHD-Scenes?style=social&label=Code+Stars)](https://github.com/TJRadarLab/OmniHD-Scenes) <a href='https://scholar.google.cz/citations?user=gZfyMFwAAAAJ'><img src="https://img.shields.io/badge/dynamic/json?url=https://raw.githubusercontent.com/zhenglianqing/zhenglianqing.github.io/google-scholar-stats/gs_data.json&query=$.publications.gZfyMFwAAAAJ:_FxGoFyzp5QC.num_citations&logo=Google%20Scholar&label=citations&color=9cf&labelColor=f6f6f6&style=flat"></a>
 
 **<u>Lianqing Zheng</u>**, Long Yang\*, Qunshu Lin\*, Wenjin Ai, Minghao Liu et al.
   </div>
